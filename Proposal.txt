@@ -1,0 +1,24 @@
+Proposal - Group 3
+
+Group members:
+
+       Ivana Stopka 
+       Namita Sahoo
+       Prabhdeep Sandhu
+       Sean Scotland
+
+Project outline:
+
+Being a team of analysts for a new start-up streaming service for movies, we would like to explore the relationship between golden globe winners and IMDb ratings to help inform us on which movie rights to chase. We would like to know whether public perception (IMDb ratings) of movie quality and officially given status to a movie (golden globe winners) are in line with one another.
+create a database aggregated from several different CSV files using 
+
+Data Sources:
+
+•Kaggle.com – IMDb (Movies/Ratings) 
+://www.kaggle.com/stefanoleone992/imdb-extensive-dataset?select=IMDb+movies.csv)
+
+•Kaggle.com – Golden Globe Awards
+https://www.kaggle.com/unanimad/golden-globe-awards
+
+
+We will create a database aggregated from several different CSV files using postgres. We will also be creating an ERD.
