@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Movies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <!--Custom CSS Link-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+
+    <body>
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" style="background-color: transparent" href="index.html">ETL Project - At the Movies!</a>
+                <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a id="lmargin" class="nav-link" href="intro.html" style="color: black">Introduction</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a id="lmargin" class="nav-link" href="data.html" style="color: black">Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Content Section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12">
+                    <!-- Intro -->
+                    <div class="box">
+                        <h3 id="bigtitle" class="title">Objective</h3>
+                        <hr>
+                        <p id="pline2">As a team of analysts for a new start-up streaming service for movies, 
+                            we would like to explore the relationship between Golden Globe winners and IMDB ratings 
+                            to help inform on which movie rights to chase. We aim to explore whether public perception (IMDb ratings) 
+                            of movie quality and the officially given status of a movie (Golden Globe winners) are in line with one another.
+                        </p>
+                        <h3>Data Sources</h3>
+                        <hr>
+                        <p id="pline">The data source was Kaggle.com with the data in CSV format.
+                        </p>
+                        <h3>Database Preparation</h3>
+                        <hr>
+                        <p id="pline">An ERD diagram of the tables to be developed was created on quickdatabasediagrams.com. 
+                            The export function was used to create the file schema.sql and run in PostreSQL to create the tables in a new database called movies_db.
+                        </p>
+                        <h3>ETL Process</h3>
+                        <hr>
+                        <p id="pline">
+                            4.1 - Extract
+                            <br>
+                            The data sources were as follows with the files downloaded from each in CSV format. The CSV files of the raw data can be found in the data folder.
+                            <ol>
+                                <li> Kaggle.com – IMDb (Movies/Ratings) 
+                                http://www.kaggle.com/stefanoleone992/imdb-extensive-dataset?select=IMDb+movies.csv
+                                IMDb movies.csv
+                                IMDb ratings.csv
+                                </li>
+                                <li> Kaggle.com – Golden Globe Awards
+                                https://www.kaggle.com/unanimad/golden-globe-awards
+                                golden_globe_awards.csv
+                                </li>
+                            </ol>	
+
+                            4.2 - Transform
+                            <br>
+                            The three CSV files listed below were imported into a pandas dataframe and the following transformations conducted for each.
+                            <ol> 
+                                <li>IMDb_movies</li>
+                                <li>IMDb_ratings</li>
+                                <li>Golden_globe_awards</li>  
+                            </ol>
+
+                            <ul> 
+                                <li>Removed all unnecessary columns leaving the data with the three relevant columns: imdb_ID, imdb_rating and total_votes.</li>
+                                <li>Columns were renamed to be consistent with the ERD table.</li>
+                                <li>All rows with any null values were removed from the dataset.</li>  
+                            </ul>
+
+                            4.3 - Load
+                            <br>
+                            The imported dataframes were loaded into the tables created in Postgres database. 
+                                <li>IMDB_movies</li>
+                                <li>IMDB_ratings</li>
+                                <li>Golden_globe</li>  
+                            </ol>
+                  
+                        </p>
+                        <h3>Conclusions</h3>
+                        <hr>
+                        <p id="pline">Blah blah black sheep
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <!-- Small Plots -->
+                    <div class="box">
+                        <h4 id="titleleft" class="title">Visualizations</h4>
+                        <hr>
+                        <div class="container">
+                            <div style="padding-bottom: 30px;">
+                                <div>
+                                        <img  src="Visualisations/Films who were nominated more than 15 times.png" alt="Max Temperature Plot">
+                                </div>
+                                <div>
+                                        <img  src="Visualisations/Film Nominations with highest worldwide gross income.png" alt="Humidity Plot">
+                                </div>
+                                <div>
+                                        <img src="Visualisations/Film Nominations with highest total votes.png" alt="Cloudiness Plot">
+                                </div>
+                                <div>
+                                        <img  src="Visualisations/Film Nominations with highest IMDB ratings and wins>1.png" alt="Wind Speed Plot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!-- Footer Section -->
+        <footer>
+            <p>Copyright &copy; 2021 <a id="footcolor" href="https://github.com/itsnameeta/web-design-challenge/">itsnameeta</a></p>
+        </footer>
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>  
+    </body>
+
+</html>
