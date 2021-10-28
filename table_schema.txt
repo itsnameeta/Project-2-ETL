@@ -1,0 +1,48 @@
+-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- Removed "" from all to avoid syntax confusion later.
+-- Added descriptions for each step.
+
+-- Create table called "imdb_movies". Primary key is "imdb_ID" - it is unique.
+CREATE TABLE imdb_movies (
+    imdb_ID VARCHAR   NOT NULL,
+    movie_title VARCHAR   NOT NULL,
+    year_released INT   NOT NULL,
+    genre VARCHAR   NOT NULL,
+    country VARCHAR   NOT NULL,
+    avg_vote FLOAT   NOT NULL,
+    worldwide_gross_income VARCHAR   NOT NULL,
+    reviews_from_users FLOAT   NOT NULL,
+    reviews_from_critics FLOAT   NOT NULL,
+    CONSTRAINT pk_imdb_movies PRIMARY KEY (
+        imdb_ID
+     )
+);
+
+-- Create table called "imdb_ratings". Primary key is "imdb_ID" - it is unique.
+CREATE TABLE imdb_ratings (
+    imdb_ID VARCHAR   NOT NULL,
+    imdb_rating FLOAT   NOT NULL,
+    total_votes INT   NOT NULL,
+    CONSTRAINT pk_imdb_ratings PRIMARY KEY (
+        imdb_ID
+     )
+);
+
+-- Create table called "golden_globe". This table has a one to many relationship between imdb_movies.movie_title and golden_globe.movie_title.
+CREATE TABLE golden_globe (
+    movie_title VARCHAR   NOT NULL,
+    nominee VARCHAR   NOT NULL,
+    year_released INT   NOT NULL,
+    year_awarded INT   NOT NULL,
+    category VARCHAR   NOT NULL,
+    win BOOLEAN   NOT NULL
+);
+
+
+-- Identified the foreign keys (FK) to link the tables (see Movies ERD.png for visual representation).
+ALTER TABLE imdb_ratings ADD CONSTRAINT fk_imdb_ratings_imdb_ID FOREIGN KEY(imdb_ID)
+REFERENCES imdb_movies (imdb_ID);
+
+ALTER TABLE golden_globe ADD CONSTRAINT fk_golden_globe_movie_title FOREIGN KEY(movie_title)
+REFERENCES imdb_movies (movie_title);
+

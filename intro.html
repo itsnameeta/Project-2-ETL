@@ -45,9 +45,9 @@
                         <h3 id="bigtitle" class="title">Objective</h3>
                         <hr>
                         <p id="pline2">As a team of analysts for a new start-up streaming service for movies, 
-                            we would like to explore the relationship between Golden Globe winners and IMDB ratings 
-                            to help inform on which movie rights to chase. We aim to explore whether public perception (IMDb ratings) 
-                            of movie quality and the officially given status of a movie (Golden Globe winners) are in line with one another.
+                            we would like to explore the relationship between Golden Globe winners and IMDb ratings 
+                            to help inform on which movie rights to chase. We aim to explore whether public perception 
+                            (IMDb ratings) of movie quality and the officially given status of a movie (Golden Globe winners) are in line with one another.
                         </p>
                         <h3>Data Sources</h3>
                         <hr>
@@ -55,6 +55,8 @@
                         </p>
                         <h3>Database Preparation</h3>
                         <hr>
+                        <div><img  src="Movies ERD.png" alt="ERD"></div>
+                        
                         <p id="pline">An ERD diagram of the tables to be developed was created on quickdatabasediagrams.com. 
                             The export function was used to create the file schema.sql and run in PostreSQL to create the tables in a new database called movies_db.
                         </p>
@@ -88,7 +90,8 @@
                             <ul> 
                                 <li>Removed all unnecessary columns leaving the data with the three relevant columns: imdb_ID, imdb_rating and total_votes.</li>
                                 <li>Columns were renamed to be consistent with the ERD table.</li>
-                                <li>All rows with any null values were removed from the dataset.</li>  
+                                <li>Cleaned the data by dropping the duplicates and null values. </li>  
+                                <li>The new transformed movies data was then saved in the data folder. </li>  
                             </ul>
 
                             4.3 - Load
@@ -102,7 +105,7 @@
                         </p>
                         <h3>Conclusions</h3>
                         <hr>
-                        <p id="pline">Blah blah black sheep
+                        <p id="pline">Overall, our project was a great success returning some interesting findings. For instance, looking at the data, the top grossing films are not necessarily the top-rated movies on IMDb with only three of the top 20 highest grossing films in the top 20 rated films on IMDb. It was also discovered, that out of the top 20 rated films on IMDb, 11 of them also won golden globes. However, only one of those golden globe winners came in between 11-20th. This suggests that after the top handful of films, professional and public perception may start to diverge meaning we may want to chase rights for films that are highly rated by the public rather than the industry.
                         </p>
                     </div>
                 </div>
@@ -115,16 +118,16 @@
                         <div class="container">
                             <div style="padding-bottom: 30px;">
                                 <div>
-                                        <img  src="Visualisations/Films who were nominated more than 15 times.png" alt="Max Temperature Plot">
+                                        <img  src="Visualisations/Films who were nominated more than 15 times.png" alt="1">
                                 </div>
                                 <div>
-                                        <img  src="Visualisations/Film Nominations with highest worldwide gross income.png" alt="Humidity Plot">
+                                        <img  src="Visualisations/Film Nominations with highest reviews from critics.png" alt="2">
                                 </div>
                                 <div>
-                                        <img src="Visualisations/Film Nominations with highest total votes.png" alt="Cloudiness Plot">
+                                        <img src="Visualisations/Film Nominations with highest total votes.png" alt="3">
                                 </div>
                                 <div>
-                                        <img  src="Visualisations/Film Nominations with highest IMDB ratings and wins>1.png" alt="Wind Speed Plot">
+                                        <img  src="Visualisations/Film Nominations with highest IMDB ratings and wins greater than 1.png" alt="4">
                                 </div>
                             </div>
                         </div>
