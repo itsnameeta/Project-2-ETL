@@ -20,5 +20,6 @@ Steps to run the code/ files
 
 5. Visualisations/ graphs are in Visualisations folder 
 
-6. The project report (Project Report.docx) is in word document and html file (index.html and intro.html)
+6. The project report (Project Report.docx) is in word document and html file (index.html and intro.html). 
+***There is a placeholder for the data in the html page (for later purposes)
 
